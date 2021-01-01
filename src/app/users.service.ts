@@ -14,6 +14,6 @@ regURL= "http://localhost:3000/users";
     return this.http.post(this.regURL, data);
   }
   deleteuserdata(id){
-  return this.http.delete(this.regURL, id);
+  return this.http.delete(`${this.regURL}/${id}`);
   }
 }
