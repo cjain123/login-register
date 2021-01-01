@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr *ngFor = "let userdata of collection">
+<td>{{userdata.id}}</td>
+<td>{{userdata.name}}</td>
+<td>{{userdata.email}}</td>
+<td><button (click)= "deleteuserdata(userdata.id)"class="fa fa-trash-o"></button></td>
+</tr>
+  </tbody>
+</table>
