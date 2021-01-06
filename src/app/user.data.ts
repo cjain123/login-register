@@ -1,7 +1,6 @@
-export interface user
-{
-  id : [],
-  name : [],
-  email:[],
-  password:[],
-};
+export interface user {
+  id: [];
+  name: [];
+  email: [];
+  password: [];
+}
