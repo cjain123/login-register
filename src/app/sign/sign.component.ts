@@ -10,4 +10,7 @@ export class SignComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-}
+
+
+    }
+

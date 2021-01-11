@@ -10,17 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 data
- constructor(private signdata: UsersService, private Router:Router) { }
+Total:number;
+  constructor(private signdata: UsersService, private Router:Router) { }
 
   ngOnInit(): void {
     this.data = localStorage.getItem("token");
-  }
-  loggeduser(){
-    this.data ="QpwL5tke4Pnpja7X4";
-    localStorage.setItem("token", this.data);
-    this.data.push(this.data)
+  this.LoggedUser();
+      }
+  Logout() {
+    localStorage.removeItem("token");
+    this.Router.navigate(["/sign"])
+}
+LoggedUser(): any {
+  this.signdata
+  .LoggedUser().subscribe((result) =>  {
+    this.Total = result.total;
 
-
-  }
-
+  });
+}
 }

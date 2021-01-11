@@ -1,17 +1,69 @@
-<div class="card text-center">
-  <div class="card-header">
-    sign-up/login
-  </div>
-  <div class="card-body">
-    <a class="card-title" aria-current="page" routerLink="/register">Register</a><br />
-<br />
-<a class="card-title" routerLink="/login">Login</a>
-  </div>
-  <div class="card-footer text-muted">
+<!DOCTYPE html>
+<html lang="en">
 
-  </div>
-</div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>Freelancer - Start Bootstrap Theme</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+
+</head>
+
+<body id="page-top">
 
 
+  <!-- Masthead-->
+  <header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+      <!-- Masthead Avatar Image-->
+      <img class="masthead-avatar mb-10" src="assets/img/avataaars.svg" alt="" />
+      <!-- Masthead Heading-->
+      <div class="card text-center">
+        <div class="card-header">
 
-<router-outlet></router-outlet>
+          sign-up/login
+        </div>
+        <div class="card-body">
+          <a class="card-title" aria-current="page" routerLink="/register">Register</a><br />
+          <br />
+          <a class="card-title" routerLink="/login">Login</a>
+        </div>
+        <div class="card-footer text-muted">
+
+        </div>
+      </div>
+      <!-- Masthead Subheading-->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" routerLink="/sign">signdata</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item active">
+
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <br />
+      <br />
+      <div class='container'>
+        <router-outlet>
+
+        </router-outlet>
+        <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+      </div>

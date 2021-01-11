@@ -12,7 +12,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   alert: boolean = false;
-  createuser;
+  CreateUser;
   name: string;
   email: string;
   password: string;
@@ -26,8 +26,8 @@ export class RegisterComponent implements OnInit {
     else {
       alert('enter valid detail');
     }
-    console.log(this.createuser);
-    this.signdata.createuser(this.createuser).subscribe((data1) =>
-    console.log(data1, 'data created'));
+    console.log(this.CreateUser);
+    this.signdata.CreateUser(this.CreateUser).subscribe((Data) =>
+    console.log());
   }
 }

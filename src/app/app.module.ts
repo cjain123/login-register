@@ -1,3 +1,6 @@
+import { UsersService } from './users.service';
+import { AuthGuard } from './auth.guard';
+
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -13,6 +16,10 @@ import { SignComponent } from './sign/sign.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     SignComponent,
     DashboardComponent,
 
+
+
   ],
   imports: [
     BrowserModule,
@@ -30,8 +39,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+
+
   ],
-  providers: [],
+  providers: [AuthGuard, UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

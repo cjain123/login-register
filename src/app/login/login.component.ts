@@ -6,32 +6,36 @@ import { UsersService } from './../users.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  alert:boolean =false;
-  existinguser
-email:string;
-password:string;
-data:string;
-
-  constructor(private signdata:UsersService, private Router:Router) { }
+  alert: boolean = false;
+  ExistingUser;
+  email: string;
+  password: string;
+  data: string;
+  isloggedin:boolean;
+  constructor(private signdata: UsersService, private Router: Router) {}
 
   ngOnInit(): void {
-   this.data = localStorage.getItem("token");
+    this.data = localStorage.getItem('token');
   }
 
-  user1(){
-    if(this.email == "eve.holt@reqres.in" && this.password == "pistol"){
+  UserLog() {
+    if (this.email == 'eve.holt@reqres.in' && this.password == 'pistol') {
       this.Router.navigate([`/dashboard`]);
+      this.isloggedin=true;
+      this.signdata.StoreToken();
+    } else {
+      alert('enter valid detail');
+      this.isloggedin=false;
+
     }
-    else{
-      alert("enter valid detail");
-    }
-    this.data ="QpwL5tke4Pnpja7X4";
-    localStorage.setItem("token", this.data);
-      console.log(this.existinguser);
-    this.signdata.existinguser(this.existinguser).subscribe((result)=>
-    console.log(result,"data created")
-    )}
+    this.data = 'QpwL5tke4Pnpja7X4';
+    localStorage.setItem('token', this.data);
+    console.log(this.ExistingUser);
+    this.signdata
+      .ExistingUser(this.ExistingUser)
+      .subscribe((result) => console.log());
+  }
 }

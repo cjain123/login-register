@@ -12,25 +12,32 @@
 
         </li>
         <li class="nav-item">
-          <a class="nav-link">dashboard</a>
+          <a class="nav-link">Dashboard</a>
 
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/sign">logout</a>
-
-        </li>
-
-      </ul>
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-
-
       </ul>
     </div>
-
   </div>
-</nav>
-<br/>
-<br/>
-{{data}}
 
-<router-outlet></router-outlet>
+  <ul class="nav justify-content-end">
+    <li class="nav-item-end-right">
+      <button class="btn btn-danger " (click)="Logout()">
+        <i class="fas fa-sign-out-alt">Logout</i>
+      </button>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+<br />
+<br />
+<td>{{data}}</td>
+<br/>
+<br/>
+<tr>Total Number Of Users</tr>
+<td>{{Total}}</td>
+
+
+
