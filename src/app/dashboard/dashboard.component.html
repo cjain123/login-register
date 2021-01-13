@@ -7,12 +7,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/users">User-List</a>
 
-        </li>
+        <ul class="nav-item">
+          <li class="active" class="nav-link active">Dashboard</li>
+
+        </ul>
         <li class="nav-item">
-          <a class="nav-link">Dashboard</a>
+          <a  class="nav-link" routerLink="/users">User-List</a>
 
         </li>
       </ul>
@@ -22,7 +23,7 @@
   <ul class="nav justify-content-end">
     <li class="nav-item-end-right">
       <button class="btn btn-danger " (click)="Logout()">
-        <i class="fas fa-sign-out-alt">Logout</i>
+        <i class="fa fa-sign-out">Logout</i>
       </button>
     </li>
   </ul>
@@ -33,11 +34,14 @@
 
 <br />
 <br />
-<td>{{data}}</td>
-<br/>
-<br/>
-<tr>Total Number Of Users</tr>
-<td>{{Total}}</td>
+<div class="card" style="width: 50rem;">
+  <div class="card-body">
+    <tr>Token-Id = {{data}}</tr><br/>
+    <tr>Total Number Of Users = {{Total}}</tr><br/>
+    <a routerLink="/users" class="btn btn-primary">Go To Users-List</a>
+  </div>
+</div>
+
 
 
 

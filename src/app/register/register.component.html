@@ -4,27 +4,28 @@
       <div class="card text-center">
         <div class="card-header">
           <div class="card-body">
-            <form class="container">
-              <div  class="input-group mb-3">
-                <label for="inputname" class="col-sm-2 col-form-label col-form-label-sm">Name</label>
-                <input type="name" class="form-control"  class="col-sm-10" name = "name" [(ngModel)]= "name">
-                <div id="name" class="form-text"></div>
+            <form >
+              <div class="mb-3" class="input-group mb-3">
+                <label for="exampleInputPassword1" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+                <input type="name" class="form-control" name="name" [(ngModel)]="name" />
               </div>
-              <div  class=" mb-3">
-                <label for="inputname" class="col-sm-2 col-form-label col-form-label-sm"> Email</label>
-               <input type="email" class="form-control"  class="col-sm-10" name = "email" [(ngModel)]= "email" />
+              <div class="mb-3" class="input-group mb-3">
+                <label for="exampleInputEmail1" class="col-sm-3 col-form-label col-form-label-sm">Email </label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="email" />
+                <div id="emailHelp" class="form-text"></div>
+              </div>
+              <div class="mb-3" class="input-group mb-3">
+                <label for="exampleInputPassword1" class="col-sm-3 col-form-label col-form-label-sm">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="password" />
+              </div>
 
-              </div>
-              <div  class="input-group mb-3">
-                <label for="exampleInputPassword1" class="col-sm-2 col-form-label col-form-label-sm">Password</label>
-                <input type="password" class="form-control" class="col-sm-10" name="password" [(ngModel)]= "password">
-              </div>
-
-              <button type="submit" class="btn btn-primary" (click)="newuser()">sign-up</button>
+              <button type="submit" class="btn btn-primary" (click)="newuser()">sign-up</button><br/>
+              <br/>
+              <a class="card-title" routerLink="/login">Sign in instead </a>
             </form>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+</div>
+</div>
 </div>

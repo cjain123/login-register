@@ -27,5 +27,6 @@ LoggedUser(): any {
     this.Total = result.total;
 
   });
+
 }
 }
