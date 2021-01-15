@@ -6,27 +6,24 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-data
-Total:number;
-  constructor(private signdata: UsersService, private Router:Router) { }
+  data;
+  Total: number;
+  constructor(private signdata: UsersService, private Router: Router) {}
 
   ngOnInit(): void {
-    this.data = localStorage.getItem("token");
-  this.LoggedUser();
-      }
+    this.data = localStorage.getItem('token');
+    this.LoggedUser();
+  }
   Logout() {
-    localStorage.removeItem("token");
-    this.Router.navigate(["/sign"])
-}
-LoggedUser(): any {
-  this.signdata
-  .LoggedUser().subscribe((result) =>  {
-    this.Total = result.total;
-
-  });
-
-}
+    localStorage.removeItem('token');
+    this.Router.navigate(['/sign']);
+  }
+  LoggedUser(): any {
+    this.signdata.loggedUser().subscribe((result: any) => {
+      this.Total = result.length;
+    });
+  }
 }

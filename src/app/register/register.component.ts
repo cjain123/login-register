@@ -1,10 +1,8 @@
-import { AppRoutingModule } from './../app-routing.module';
-import { LoginComponent } from './../login/login.component';
-import { UsersListComponent } from './../users-list/users-list.component';
+import { FormGroup, FormControl } from '@angular/forms';
 import { UsersService } from './../users.service';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -12,22 +10,25 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   alert: boolean = false;
-  CreateUser;
-  name: string;
-  email: string;
-  password: string;
+
+  Register = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
+
   constructor(private signdata: UsersService, private Router: Router) {}
 
   ngOnInit(): void {}
-  newuser() {
-    if (this.email == 'eve.holt@reqres.in' && this.password == 'pistol') {
+  newUser() {
+    if (this.Register) {
       this.Router.navigate([`/login`]);
-    }
-    else {
+    } else {
       alert('enter valid detail');
     }
-    console.log(this.CreateUser);
-    this.signdata.CreateUser(this.CreateUser).subscribe((Data) =>
-    console.log());
+    console.log(this.Register.value);
+    this.signdata
+      .createUser(this.Register.value)
+      .subscribe((Data) => console.log());
   }
 }

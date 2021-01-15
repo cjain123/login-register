@@ -10,33 +10,32 @@ import { map, mapTo, tap } from 'rxjs/operators';
 export class UsersService {
   constructor(private http: HttpClient) {}
 
-  BASE_URL = 'https://reqres.in/api';
+  URL = 'http://localhost:3000/users';
 
-  GetUserList() {
-    return this.http.get(`${this.BASE_URL}/users?page=2`);
+  getUserList() {
+    return this.http.get(this.URL);
   }
 
-  CreateUser(Data) {
-    return this.http.get(`${this.BASE_URL}/register`, Data);
+  createUser(Data) {
+    return this.http.post(this.URL, Data);
   }
   ExistingUser(UserLog) {
-    return this.http.get(`${this.BASE_URL}/login`, UserLog);
+    return this.http.get(this.URL, UserLog);
   }
 
-  DeleteUserData(id) {
-    return this.http.delete(`${this.BASE_URL}/${id}`);
+  deleteUserData(id) {
+    return this.http.delete(`${this.URL}/${id}`);
   }
-  LoggedUser() {
-    return this.http.get(`${this.BASE_URL}/login`);
+  loggedUser() {
+    return this.http.get(this.URL);
   }
-  LoggedIn() {
+  loggedIn() {
     return !!localStorage.getItem('token');
   }
-  StoreToken() {
+  storeToken() {
     return localStorage.setItem;
   }
   Logout(): any {
     return localStorage.removeItem('token');
   }
-
 }

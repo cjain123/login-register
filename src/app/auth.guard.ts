@@ -11,7 +11,7 @@ import { Router} from '@angular/router';
 export class AuthGuard implements CanActivate {
   constructor(private SignData: UsersService,private router:Router){}
   canActivate():boolean{
-    if(this.SignData.LoggedIn()){
+    if(this.SignData.loggedIn()){
       return true;
     }
     else{

@@ -1,4 +1,3 @@
-import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from './../users.service';
@@ -14,7 +13,7 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
   data: string;
-  isloggedin:boolean;
+  isloggedin: boolean;
   constructor(private signdata: UsersService, private Router: Router) {}
 
   ngOnInit(): void {
@@ -22,14 +21,13 @@ export class LoginComponent implements OnInit {
   }
 
   UserLog() {
-    if (this.email == 'eve.holt@reqres.in' && this.password == 'pistol') {
+    if (this.email == 'admin@gmail.com' && this.password == 'admin123') {
       this.Router.navigate([`/dashboard`]);
-      this.isloggedin=true;
-      this.signdata.StoreToken();
+      this.isloggedin = true;
+      this.signdata.storeToken();
     } else {
       alert('enter valid detail');
-      this.isloggedin=false;
-
+      this.isloggedin = false;
     }
     this.data = 'QpwL5tke4Pnpja7X4';
     localStorage.setItem('token', this.data);

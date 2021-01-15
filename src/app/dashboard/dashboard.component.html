@@ -8,12 +8,12 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
 
-        <ul class="nav-item">
-          <li class="active" class="nav-link active">Dashboard</li>
-
-        </ul>
         <li class="nav-item">
-          <a  class="nav-link" routerLink="/users">User-List</a>
+          <a class="active" class="nav-link active" routerLink="/dashboard">Dashboard</a>
+
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/users">User-List</a>
 
         </li>
       </ul>
@@ -36,12 +36,8 @@
 <br />
 <div class="card" style="width: 50rem;">
   <div class="card-body">
-    <tr>Token-Id = {{data}}</tr><br/>
-    <tr>Total Number Of Users = {{Total}}</tr><br/>
+    <tr>Token-Id = {{data}}</tr><br />
+    <tr>Total Number Of Users = {{Total}}</tr><br />
     <a routerLink="/users" class="btn btn-primary">Go To Users-List</a>
   </div>
 </div>
-
-
-
-
